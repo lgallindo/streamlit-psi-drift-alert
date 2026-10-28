@@ -35,9 +35,9 @@ def test_control_p2_below_forests_and_bounded() -> None:
     p2_c = compare_psi_means(corpus, control)
     p2_f = compare_psi_means(corpus, forests)
     assert p2_c["psi"] < p2_f["psi"]
-    # mesmo tema: não explode como troca de tema
-    assert p2_c["psi"] < 1.0
-    assert p2_f["psi"] > 0.25  # mudança forte sob faixas clássicas
+    # mesmo tema: não explode como troca de tema; abaixo do corte operacional 0,50
+    assert p2_c["psi"] < 0.50
+    assert p2_f["psi"] > 0.50  # mudança forte sob cortes do painel
 
 
 def test_forests_p2_alert_or_watch() -> None:

@@ -20,5 +20,6 @@ batches/
 
 # regenerated / copied from root samples (not used by this lesson’s just recipes)
 features/
-# Cloud extract: samples/ is vendored and tracked (was ignored in monorepo lesson)
+# Cloud extract: samples/ tracked
+# samples/
 exerciser_samples/
