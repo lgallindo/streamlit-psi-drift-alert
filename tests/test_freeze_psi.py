@@ -15,6 +15,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CORPUS = ROOT / "corpus_stats.json"
 CONTROL = ROOT / "batch_stats" / "control.json"
 FORESTS = ROOT / "batch_stats" / "forests.json"
+BALLS = ROOT / "batch_stats" / "balls.json"
 
 pytestmark = pytest.mark.skipif(
     not (CORPUS.is_file() and CONTROL.is_file() and FORESTS.is_file()),
@@ -44,6 +45,19 @@ def test_forests_p2_alert_or_watch() -> None:
     forests = load_request_stats(FORESTS)
     p2 = compare_psi_means(corpus, forests)
     state = alert_on_psi(p2["psi"], p2["n_images_corpus"], p2["n_images_production"])
+    assert state in {"WATCH", "ALERT"}
+
+
+@pytest.mark.skipif(not BALLS.is_file(), reason="balls.json ausente — just build-contingency-batches")
+def test_balls_p2_alert_or_watch() -> None:
+    """Contingência visual (como 003): bolas devem afastar o P2 do controle."""
+    corpus = load_default_corpus_stats()
+    control = load_request_stats(CONTROL)
+    balls = load_request_stats(BALLS)
+    p2_c = compare_psi_means(corpus, control)
+    p2_b = compare_psi_means(corpus, balls)
+    assert p2_b["psi"] > p2_c["psi"]
+    state = alert_on_psi(p2_b["psi"], p2_b["n_images_corpus"], p2_b["n_images_production"])
     assert state in {"WATCH", "ALERT"}
 
 

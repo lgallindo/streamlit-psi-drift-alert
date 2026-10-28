@@ -589,6 +589,8 @@ mudança forte (0,301).
 - Lotes offline (`just build-demo-batches`):
   - `batch_stats/control.json` — praias 51–100
   - `batch_stats/forests.json` — 50 florestas
+- Contingência visual (`just build-contingency-batches`), como na aula 003:
+  - `batch_stats/balls.json` — 50 bolas (`samples/balls`[:50])
 
 Confirmados com `just verify-psi control` e `just verify-psi forests`
 após `just build-demo-batches`.
@@ -612,7 +614,7 @@ após `just build-demo-batches`.
   request_stats.py          # request_features/ → lote (+ luminance_means)
   plotting.py               # histogramas, massas, médias
   corpus_stats.json         # freeze: praias[:50]
-  batch_stats/              # control.json, forests.json, …
+  batch_stats/              # control.json, forests.json, balls.json, …
   request_features/         # log vivo (gitkeep; JSON ignorados)
   features/                 # saídas de extract
   illustrations/            # PNGs do handout (just generate-illustrations)
@@ -663,6 +665,8 @@ just build-corpus-stats
 
 just build-demo-batches
 # grava batch_stats/control.json e batch_stats/forests.json
+just build-contingency-batches
+# grava batch_stats/balls.json (e landscapes, se pedido pela receita)
 
 just generate-illustrations
 # opcional: regenera illustrations/*.png usadas neste handout
