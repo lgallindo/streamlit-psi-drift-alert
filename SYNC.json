@@ -1,0 +1,18 @@
+{
+  "upstream_repo": "bentoML-processamento-imagens",
+  "upstream_sha": "71c01015c49d65a50b04aaa2d256d5a62e7118b6",
+  "lesson": "008",
+  "samples_copied": {
+    "beaches": 100,
+    "forests": 50,
+    "balls": 50
+  },
+  "patched_repo_root": [
+    "sample_sets.py",
+    "scripts/extract_image_features.py",
+    "scripts/exercise_theme.py",
+    "scripts/build_batch_from_theme.py"
+  ],
+  "main_file": "app.py",
+  "host": "https://share.streamlit.io"
+}

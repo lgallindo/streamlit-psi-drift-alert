@@ -1,0 +1,6 @@
+# Generated for Streamlit Community Cloud (offline demo path).
+streamlit>=1.40.0
+pillow>=10.0.0
+numpy>=2.0.0
+seaborn>=0.13.0
+matplotlib>=3.8.0
