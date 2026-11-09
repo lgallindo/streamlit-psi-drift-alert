@@ -749,3 +749,7 @@ python scripts/workflow_boxes/box_01_massas.py
 6. Kolmogorov–Smirnov (comparação opcional com \(D\)) —
    [Wikipédia](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test)
 7. Aula irmã KS: [`003_ks_drift_alert_streamlit`](../003_ks_drift_alert_streamlit/README.md)
+
+## Licença
+
+Código: GPL-3.0-or-later. Recursos de terceiros (dados, imagens, documentos) mantêm suas licenças/termos originais; consulte as fontes.
